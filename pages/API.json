@@ -28,6 +28,13 @@
       "usertype": "DOCTOR",
       "password": "",
       "isactive": true
+    },
+    {
+      "id": "15",
+      "nam": "lokesh",
+      "usertype": "DOCTOR",
+      "password": "132",
+      "isactive": true
     }
   ],
   "RECEPTIONIST": [
@@ -37,6 +44,13 @@
       "usertype": "RECEPTIONIST",
       "password": "123",
       "isactive": true
+    },
+    {
+      "id": "15",
+      "nam": "lokesh",
+      "usertype": "RECEPTIONIST",
+      "password": "132",
+      "isactive": true
     }
   ],
   "NURSE": [
@@ -45,6 +59,13 @@
       "nam": "rashmi",
       "usertype": "NURSE",
       "password": "123",
+      "isactive": true
+    },
+    {
+      "id": "15",
+      "nam": "lokesh",
+      "usertype": "NURSE",
+      "password": "132",
       "isactive": true
     }
   ]

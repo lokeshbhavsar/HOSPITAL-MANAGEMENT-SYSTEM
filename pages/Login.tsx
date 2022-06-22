@@ -39,7 +39,7 @@ const userlogin=(event:any)=>{
    
    }
 
- console.log(usertype,aadhar,password)
+ 
 }
 
   return (
