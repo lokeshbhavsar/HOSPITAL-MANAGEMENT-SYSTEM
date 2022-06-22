@@ -1,3 +1,51 @@
 {
-"patient":[{"id":1,"name":"lokesh","surname":"bhavsar"},{"id":2,"name":"yash","surname":"bhavsar"}]
+  "patient": [],
+  "DOCTOR": [
+    {
+      "id": "1",
+      "nam": "lokesh",
+      "usertype": "DOCTOR",
+      "password": "123",
+      "isactive": true
+    },
+    {
+      "id": "2",
+      "nam": "lokesh ji",
+      "usertype": "DOCTOR",
+      "password": "123",
+      "isactive": true
+    },
+    {
+      "id": "3",
+      "nam": "pramod",
+      "usertype": "DOCTOR",
+      "password": "123",
+      "isactive": true
+    },
+    {
+      "id": "RzQoDOR",
+      "nam": "lokesh",
+      "usertype": "DOCTOR",
+      "password": "",
+      "isactive": true
+    }
+  ],
+  "RECEPTIONIST": [
+    {
+      "id": "1",
+      "nam": "megha",
+      "usertype": "RECEPTIONIST",
+      "password": "123",
+      "isactive": true
+    }
+  ],
+  "NURSE": [
+    {
+      "id": "1",
+      "nam": "rashmi",
+      "usertype": "NURSE",
+      "password": "123",
+      "isactive": true
+    }
+  ]
 }

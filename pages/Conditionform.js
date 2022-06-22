@@ -1,18 +1,20 @@
 import React from 'react'
 
 import {useRouter} from 'next/router';
+import Userregistration from './Admin/Userregistration';
+import Viewuser from './Viewuser';
 const Conditionform = (props) => {
-    const nav=useRouter()
+    const navigation=useRouter()
 if(props.flag==1)
 
-    console.log("1")
-else
-console.log("2")
+  return  <Userregistration></Userregistration>
+  if(props.flag==2)
+   return  <Viewuser></Viewuser>
 
 
     return (
     <div>
-    {props.flag}
+    
     </div>
    
   )
