@@ -6,37 +6,93 @@ const Userdetails = (props) => {
  const [obj,setbj]=useState({})
  const[status,setstatus]=useState()
  const[opstatus,setopstatus]=useState()
- const[flag,setflag]=useState()
- 
+const[flag,setflag]=useState(1)
   
+
+const updatevar=()=>{
+ statuscondition()
+
+}
+
+
+
+const statuscondition=()=>{
+  const ustype=obj.usertype
+  const usaadhar=obj.id
+
+  
+  if(status=="Active")
+  {
+    setstatus("Deactive")
+    setopstatus("Activate User")
+    axios.put(`http://localhost:8898/${ustype}/${usaadhar}`,{id: usaadhar,  nam: obj.nam,usertype: ustype,password: obj.password,isactive: "Deactive"})
+  }
+  if(status=="Deactive")
+  {
+    setstatus("Active")
+    setopstatus("Deactivate User")
+    axios.put(`http://localhost:8898/${ustype}/${usaadhar}`,{id: usaadhar,  nam: obj.nam,usertype: ustype,password: obj.password,isactive: "Active"})
+  }
+}
+
+
+
 
 
  useEffect(()=>{
   fetchapi()
-  
- },[status])
+  fetchstatus()
+  statuscondition()
+  fetchopstatus()
+ },[])
 
  const fetchapi=async()=>{
   const ustype=props.usertype
   const usaadhar=props.aadhar
-  const fetchdata=await axios.get(`http://localhost:8898/${ustype}/${usaadhar}`)
-  setbj(fetchdata.data)
-  
-  if(obj.isactive)
-  {
-    setstatus("Active")
-    setopstatus("Deactivate user")
-  }
-  if(!obj.isactive)
-  {
-    setstatus("Deactive")
-    setopstatus("Activate user")
-  }
   
   
   
+  await axios.get(`http://localhost:8898/${ustype}/${usaadhar}`).then(resp => {
+    setbj(resp.data)
+    
+})
 
+  
  }
+
+ const fetchstatus=async()=>{
+  const ustype=props.usertype
+  const usaadhar=props.aadhar
+  
+  
+  
+  await axios.get(`http://localhost:8898/${ustype}/${usaadhar}`).then(resp => {
+    setstatus(resp.data.isactive)
+    console.log('fry');
+    
+})
+
+  
+ }
+
+
+ const fetchopstatus=async()=>{
+  const ustype=props.usertype
+  const usaadhar=props.aadhar
+  
+  
+  
+  await axios.get(`http://localhost:8898/${ustype}/${usaadhar}`).then(resp => {
+    if(resp.data.isactive=="Active")
+    setopstatus("DEACTIVATE USER")
+    if(resp.data.isactive=="Deactive")
+    setopstatus("ACTIVATE USER")
+    
+})
+
+  
+ }
+
 
 
   return (
@@ -76,7 +132,7 @@ const Userdetails = (props) => {
                   </div>
                   <div className='row justify-content-center'>
                   <div className='col-12 bg-secondary'>
-                  <button type="button" className="btn btn-primary" >{opstatus}</button>
+                  <button type="button" className="btn btn-primary" onClick={updatevar} >{opstatus}</button>
                   </div>
                   </div>
                   

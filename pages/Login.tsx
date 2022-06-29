@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import Head from 'next/head';
 import {useRouter} from 'next/router';
+import axios from 'axios';
 
+import Receptionist from "./Receptionist"
 const Login = () => {
  
 const nav=useRouter()
@@ -9,7 +11,23 @@ const nav=useRouter()
 const [usertype,setusertype]=useState("")
 const [aadhar,setaadhar]=useState("")
 const [password,setpassword]=useState("")
- 
+const[obj,setobj]=useState<any>({})
+
+
+useEffect(()=>{
+  fetch()
+},[usertype,aadhar,password])
+
+const fetch=async()=>{
+ await axios.get(`http://localhost:8898/${usertype}/${aadhar}`).then(resp => {
+  setobj(resp.data)
+  console.log(obj);
+  
+})
+
+}
+
+
 const userlogin=(event:any)=>{
   event.preventDefault()
    if(usertype.length==0 || aadhar.length==0 || password.length==0)
@@ -31,7 +49,25 @@ const userlogin=(event:any)=>{
         break
         case "DOCTOR":console.log("DOCTOR")
         break
-        case "RECEPTIONIST":console.log("RECEPTIONIST")
+        case "RECEPTIONIST":
+          
+          if(obj.password!=password)
+          alert('INVALID USER');
+          
+          if(obj.password==password)
+          {
+            if(obj.isactive=="Deactive")
+            alert("The "+usertype+" is currently Disabled by management")
+            else
+            nav.push(
+              { pathname: "/Receptionist", query: { name: obj.nam,aadhar:aadhar } },
+              "/Receptionist"
+            );
+          }
+          
+
+          
+          
         break
         case "NURSE":console.log("NURSE")
         break

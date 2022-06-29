@@ -1,5 +1,5 @@
 import axios from 'axios'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 
 const Userregistration = () => {
 
@@ -11,7 +11,13 @@ const Userregistration = () => {
   const uploaddata = async (apiobj) => {
     const usertypeapi = apiobj.usertype
     await axios.post(`http://localhost:8898/${usertypeapi}`, apiobj)
+    setaadhar("")
+    setnam("")
+    setpassword("")
+    setusertype("")
     alert("User "+apiobj.nam+" has been created")
+    
+
   }
 
 
@@ -22,9 +28,9 @@ const Userregistration = () => {
      if(nam.length==0||aadhar.length==0||usertype.length==0||password.length==0)
      {
       alert("Please fill all fields")
-      return
+      
      }
-    const obj = { id: aadhar, nam: nam, usertype: usertype, password: password, isactive: true }
+    const obj = { id: aadhar, nam: nam, usertype: usertype, password: password, isactive: "Active" }
 
     switch (usertype) {
 
@@ -40,7 +46,6 @@ const Userregistration = () => {
     }
 
 
-
   }
 
   return (
@@ -54,7 +59,7 @@ const Userregistration = () => {
 
             {/*form start */}
             <form onSubmit={userlogin}>
-              <select className="form-select" aria-label="Default select example" onChange={(event) => { setusertype(event.target.value) }}>
+              <select className="form-select" aria-label="Default select example" value={usertype} onChange={(event) => { setusertype(event.target.value) }}>
                 <option value="SELECTED">Select User Type</option>
 
                 <option value="DOCTOR">DOCTOR</option>
@@ -64,18 +69,18 @@ const Userregistration = () => {
               </select>
               <div className="my-3">
 
-                <input type="text" className="form-control" id="exampleInputname" aria-describedby="emailHelp" placeholder='ENTER NAME.' onChange={(event) => { setnam(event.target.value) }}></input>
+                <input type="text" className="form-control" id="exampleInputname" aria-describedby="emailHelp" placeholder='ENTER NAME.' value={nam} onChange={(event) => { setnam(event.target.value) }}></input>
 
               </div>
 
               <div className="my-3">
 
-                <input type="number" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder='ENTER AADHAR NO.' onChange={(event) => { setaadhar(event.target.value) }}></input>
+                <input type="number" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder='ENTER AADHAR NO.' value={aadhar} onChange={(event) => { setaadhar(event.target.value) }}></input>
 
               </div>
               <div className="my-3">
 
-                <input type="password" className="form-control" id="exampleInputPassword1" placeholder='CREATE PASSWORD' onChange={(event) => { setpassword(event.target.value) }}></input>
+                <input type="password" className="form-control" id="exampleInputPassword1" placeholder='CREATE PASSWORD' value={password} onChange={(event) => { setpassword(event.target.value) }}></input>
               </div>
 
               <button type="submit" className="btn btn-primary">Submit</button>

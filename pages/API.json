@@ -1,19 +1,67 @@
 {
-  "patient": [],
+  "PATIENT": [
+    {
+      "id": "2",
+      "nam": "yash"
+    },
+    {
+      "id": "1",
+      "nam": "taau"
+    },
+    {
+      "id": "3",
+      "nam": "yashi"
+    },
+    {
+      "id": "4",
+      "nam": "suresh",
+      "admit": {
+        "isadmit": false,
+        "releasedate": "",
+        "room": "na",
+        "nursename": "na"
+      },
+      "doctorname": "na",
+      "observation": "na",
+      "bill": null,
+      "visitdate": "6/28/2022"
+    },
+    {
+      "id": "5",
+      "nam": "mayur",
+      "admit": {
+        "isadmit": false,
+        "releasedate": "",
+        "room": "na",
+        "nursename": "na"
+      },
+      "doctorname": "na",
+      "observation": "na",
+      "bill": null,
+      "visitdate": "6/29/2022",
+      "medicine": []
+    }
+  ],
   "DOCTOR": [
     {
       "id": "1",
       "nam": "lokesh",
       "usertype": "DOCTOR",
       "password": "123",
-      "isactive": true
+      "isactive": "Deactive"
     },
     {
       "id": "2",
-      "nam": "yash",
+      "nam": "lokesh",
       "usertype": "DOCTOR",
       "password": "123",
-      "isactive": false
+      "isactive": "Active"
+    },
+    {
+      "nam": "saourabh",
+      "password": "123",
+      "isactive": "Active",
+      "id": "3"
     }
   ],
   "RECEPTIONIST": [
@@ -30,6 +78,27 @@
       "usertype": "RECEPTIONIST",
       "password": "132",
       "isactive": true
+    },
+    {
+      "id": "2",
+      "nam": "loki",
+      "usertype": "RECEPTIONIST",
+      "password": "123",
+      "isactive": "Active"
+    },
+    {
+      "id": "3",
+      "nam": "meem",
+      "usertype": "RECEPTIONIST",
+      "password": "1",
+      "isactive": "Deactive"
+    },
+    {
+      "id": "4",
+      "nam": "missu",
+      "usertype": "RECEPTIONIST",
+      "password": "123",
+      "isactive": "Active"
     }
   ],
   "NURSE": [
