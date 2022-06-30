@@ -15,3 +15,8 @@ body{
 h3{
     color: white;
 }
+.myhead{
+    color: black;
+    font-size: larger;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}

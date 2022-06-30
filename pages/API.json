@@ -40,6 +40,21 @@
       "bill": null,
       "visitdate": "6/29/2022",
       "medicine": []
+    },
+    {
+      "id": "6",
+      "nam": "mahesh",
+      "admit": {
+        "isadmit": "no",
+        "releasedate": "",
+        "room": "na",
+        "nursename": "na"
+      },
+      "doctorname": "na",
+      "observation": "na",
+      "bill": 0,
+      "visitdate": "6/29/2022",
+      "medicine": []
     }
   ],
   "DOCTOR": [

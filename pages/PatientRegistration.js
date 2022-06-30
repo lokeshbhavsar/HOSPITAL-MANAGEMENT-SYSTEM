@@ -35,7 +35,7 @@ const PatientRegistration = () => {
        }
        else
        {
-        const obj = { id: aadhar, nam: nam,admit:{isadmit:false,releasedate:"",room:"na",nursename:"na"},doctorname:"na",observation:"na",bill:null,visitdate:new Date().toLocaleDateString(),medicine:[] }
+        const obj = { id: aadhar, nam: nam,admit:{isadmit:"no",releasedate:"",room:"na",nursename:"na"},doctorname:"na",observation:"na",bill:0,visitdate:new Date().toLocaleDateString(),medicine:[] }
         uploaddata(obj)
 
        }
