@@ -1,13 +1,15 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react'
-
+import Description from "./Description"
 const PatientDetails = (props) => {
    const [aadhar,setaadhar]=useState(props.aadhar)
    const [rel,setrel]=useState(0)
    const [obj,setobj]=useState({})
    const[admitobj,setadmit]=useState({})
-   const[tempstatus,settempstatus]=useState()
-const[temprel,settemprel]=useState(0)
+   const[arobj,setarobj]=useState([])
+
+
+
    useEffect(()=>{
     
   fetch()
@@ -18,6 +20,10 @@ const[temprel,settemprel]=useState(0)
     admitfetch()
  })
 
+ useEffect(()=>{
+    setarobj(Object.entries(admitobj))
+        console.log(arobj);
+ },[admitobj])
 
 
   const fetch=async()=>{
@@ -33,8 +39,9 @@ const[temprel,settemprel]=useState(0)
     else{
         setadmit(obj.admit)
         console.log(admitobj);
+        
     }
-    settemprel(5)
+    
   }
 
 
@@ -42,7 +49,7 @@ const[temprel,settemprel]=useState(0)
     <div>
         
 
-<table className="table table-bordered table-dark">
+<table className="table table-bordered table-dark my-4">
  
   <tbody>
     <tr>
@@ -56,18 +63,38 @@ const[temprel,settemprel]=useState(0)
     </tr>
   
     <tr>     
-      <td >IS ADMIT</td>
-      <td>{admitobj.isadmit}</td>
+      <td >VISIT DATE</td>
+      <td>{obj.visitdate}</td>
     </tr>
 
     <tr>     
-      <td >Larry the Bird</td>
-      <td>@twitter</td>
+      <td >DOCTOR ASSSIGNED</td>
+      <td>{obj.doctorname}</td>
+    </tr>  
+
+ 
+   
+    <tr>     
+      <td >NURSE ASSSIGNED</td>
+      <td>{admitobj.nursename}</td>
+    </tr>
+    <tr>     
+      <td >IS ADMIT</td>
+      <td>{admitobj.isadmit}</td>
+    </tr>
+    <tr>     
+      <td >RELEASE DATE</td>
+      <td>{admitobj.releasedate}</td>
+    </tr>
+
+    <tr>     
+      <td >ROOM ASSSIGNED</td>
+      <td>{admitobj.room}</td>
     </tr>
   </tbody>
 </table>
 
-
+<Description observation={obs}></Description>
     </div>
   )
 }

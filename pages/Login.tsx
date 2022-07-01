@@ -47,7 +47,22 @@ const userlogin=(event:any)=>{
             
           }
         break
-        case "DOCTOR":console.log("DOCTOR")
+        case "DOCTOR":
+        
+          if(obj.password!=password)
+          alert('INVALID USER');
+          
+          if(obj.password==password)
+          {
+            if(obj.isactive=="Deactive")
+            alert("The "+usertype+" is currently Disabled by management")
+            else
+            nav.push(
+              { pathname: "/Doctor", query: { name: obj.nam,aadhar:aadhar } },
+              "/Doctor"
+            );
+          }
+
         break
         case "RECEPTIONIST":
           

@@ -1,59 +1,18 @@
 {
   "PATIENT": [
     {
-      "id": "2",
-      "nam": "yash"
-    },
-    {
       "id": "1",
-      "nam": "taau"
-    },
-    {
-      "id": "3",
-      "nam": "yashi"
-    },
-    {
-      "id": "4",
-      "nam": "suresh",
-      "admit": {
-        "isadmit": false,
-        "releasedate": "",
-        "room": "na",
-        "nursename": "na"
-      },
-      "doctorname": "na",
-      "observation": "na",
-      "bill": null,
-      "visitdate": "6/28/2022"
-    },
-    {
-      "id": "5",
       "nam": "mayur",
       "admit": {
-        "isadmit": false,
-        "releasedate": "",
-        "room": "na",
-        "nursename": "na"
+        "isadmit": "NO",
+        "releasedate": "NOT NEEDED",
+        "room": "NOT ASSIGNED",
+        "nursename": "NOT ASSIGNED"
       },
-      "doctorname": "na",
-      "observation": "na",
-      "bill": null,
-      "visitdate": "6/29/2022",
-      "medicine": []
-    },
-    {
-      "id": "6",
-      "nam": "mahesh",
-      "admit": {
-        "isadmit": "no",
-        "releasedate": "",
-        "room": "na",
-        "nursename": "na"
-      },
-      "doctorname": "na",
-      "observation": "na",
+      "doctorname": "NOT ASSIGNED",
+      "observation": "NOT ASSIGNED",
       "bill": 0,
-      "visitdate": "6/29/2022",
+      "visitdate": "6/30/2022",
       "medicine": []
     }
   ],
