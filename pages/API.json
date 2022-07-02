@@ -13,7 +13,8 @@
       "observation": "NOT ASSIGNED",
       "bill": 0,
       "visitdate": "6/30/2022",
-      "medicine": []
+      "medicine": [{"medname":"mayur", "timming": "NIGHT", "nodays": "1", "price": ""}
+      ]
     }
   ],
   "DOCTOR": [

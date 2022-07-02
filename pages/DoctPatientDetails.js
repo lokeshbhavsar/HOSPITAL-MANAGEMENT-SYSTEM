@@ -15,6 +15,8 @@ const DoctPatientDetails = (props) => {
   const [qty, setqty] = useState("DAYS")
   const [timming, settimming] = useState("TIMMING")
   const[temparr,setemparr]=useState([])
+  const[again,setagain]=useState(0)
+  
 //props.Doctassined,obs
 
 const addmed = (event) => {
@@ -44,15 +46,33 @@ const addmed = (event) => {
    })
   
    useEffect(()=>{
+if(obj.medicine!=undefined)
+    setemparr(obj.medicine)
+  
+    console.log(temparr,"setting the array");
+   if(temparr.length!=0 &&again==0 && temparr!=undefined)
+   {
+    setarr( arrobj.concat(temparr))
+        console.log(arrobj,"setarra");
+    setagain(1)
+   }
+   })
+   
+
+   
+
+   useEffect(()=>{
       setarobj(Object.entries(admitobj))
-          console.log(arobj,"dk");
+         
           setobs(obj.observation)
-      console.log(obs);
+    
       setrdate(admitobj.releasedate)
-      console.log(rdate,"dsfad");
-      setemparr(obj.medicine)
-      console.log(temparr,"mainarra",arrobj);
-      arrobj.concat(temparr)
+  
+      
+
+     
+      
+     
    },[admitobj])
   
 
@@ -88,7 +108,7 @@ const addmed = (event) => {
       }
       else{
           setadmit(obj.admit)
-          console.log(admitobj);
+  
           
       }
       
