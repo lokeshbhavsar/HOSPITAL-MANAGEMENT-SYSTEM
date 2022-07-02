@@ -74,27 +74,18 @@ const PatientDetails = (props) => {
 
  
    
-    <tr>     
-      <td >NURSE ASSSIGNED</td>
-      <td>{admitobj.nursename}</td>
-    </tr>
-    <tr>     
-      <td >IS ADMIT</td>
-      <td>{admitobj.isadmit}</td>
-    </tr>
+ 
+
     <tr>     
       <td >RELEASE DATE</td>
       <td>{admitobj.releasedate}</td>
     </tr>
 
-    <tr>     
-      <td >ROOM ASSSIGNED</td>
-      <td>{admitobj.room}</td>
-    </tr>
+  
   </tbody>
 </table>
 
-<Description observation={obs}></Description>
+<Description observation={obj.observation}></Description>
     </div>
   )
 }

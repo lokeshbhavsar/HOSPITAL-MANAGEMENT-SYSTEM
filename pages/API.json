@@ -4,16 +4,31 @@
       "id": "1",
       "nam": "mayur",
       "admit": {
-        "isadmit": "NO",
-        "releasedate": "NOT NEEDED",
-        "room": "NOT ASSIGNED",
-        "nursename": "NOT ASSIGNED"
+        "releasedate": "05/07/2022"
       },
-      "doctorname": "NOT ASSIGNED",
-      "observation": "NOT ASSIGNED",
+      "doctorname": "lokesh",
+      "observation": "new pbs 7879 98798",
       "bill": 0,
       "visitdate": "6/30/2022",
-      "medicine": [{"medname":"mayur", "timming": "NIGHT", "nodays": "1", "price": ""}
+      "medicine": [
+        {
+          "medname": "mayur",
+          "timming": "NIGHT",
+          "nodays": "1",
+          "price": ""
+        },
+        {
+          "medname": "lokesh",
+          "timming": "DAY/NIGHT",
+          "nodays": "6",
+          "price": ""
+        },
+        {
+          "medname": "lokesht2",
+          "timming": "DAY/NIGHT",
+          "nodays": "2",
+          "price": ""
+        }
       ]
     }
   ],
@@ -79,17 +94,10 @@
   "NURSE": [
     {
       "id": "1",
-      "nam": "rashmi",
+      "nam": "tanu",
       "usertype": "NURSE",
       "password": "123",
-      "isactive": true
-    },
-    {
-      "id": "15",
-      "nam": "lokesh",
-      "usertype": "NURSE",
-      "password": "132",
-      "isactive": true
+      "isactive": "Active"
     }
   ]
 }

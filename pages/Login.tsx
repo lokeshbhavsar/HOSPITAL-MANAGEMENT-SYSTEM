@@ -84,7 +84,22 @@ const userlogin=(event:any)=>{
           
           
         break
-        case "NURSE":console.log("NURSE")
+
+        case "NURSE":
+          if(obj.password!=password)
+          alert('INVALID USER');
+          
+          if(obj.password==password)
+          {
+            if(obj.isactive=="Deactive")
+            alert("The "+usertype+" is currently Disabled by management")
+            else
+            nav.push(
+              { pathname: "/Nurse", query: { name: obj.nam,aadhar:aadhar } },
+              "/Nurse"
+            );
+          }
+
         break
       }
    
