@@ -10,8 +10,27 @@ const DoctPatientDetails = (props) => {
   const[arobj,setarobj]=useState([])
   const[obs,setobs]=useState("")
   const[rdate,setrdate]=useState("")
+  const [arrobj, setarr] = useState([])
+  const [nam, setnam] = useState("MEDCINE NAME")
+  const [qty, setqty] = useState("DAYS")
+  const [timming, settimming] = useState("TIMMING")
+  const[temparr,setemparr]=useState([])
 //props.Doctassined,obs
 
+const addmed = (event) => {
+
+
+  event.preventDefault()
+  if (nam == "MEDCINE NAME" || qty == "DAYS" || timming == "TIMMING") {
+      alert('PLEASE FILL ALL DETAILS');
+
+  }
+  else {
+      arrobj.push({ medname: nam, timming: timming, nodays: qty, price: "" })
+      setrel(rel + 1)
+  }
+  console.log(arrobj);
+}
 
   useEffect(()=>{
     
@@ -21,16 +40,19 @@ const DoctPatientDetails = (props) => {
   
    useEffect(()=>{
       admitfetch()
+     
    })
   
    useEffect(()=>{
       setarobj(Object.entries(admitobj))
-          console.log(arobj);
+          console.log(arobj,"dk");
           setobs(obj.observation)
       console.log(obs);
       setrdate(admitobj.releasedate)
       console.log(rdate,"dsfad");
-      
+      setemparr(obj.medicine)
+      console.log(temparr,"mainarra",arrobj);
+      arrobj.concat(temparr)
    },[admitobj])
   
 
@@ -56,7 +78,7 @@ const DoctPatientDetails = (props) => {
     const fetch=async()=>{
       await axios.get(`http://localhost:8898/patient/${aadhar}`).then(resp=>{setobj(resp.data)})
       setrel(1)  
-      
+     
     }
   
     const admitfetch=()=>{
@@ -114,7 +136,31 @@ const DoctPatientDetails = (props) => {
 </table>
 
 <Description observation={obs}></Description>
+<div className="row justify-content-center my-5">
+    <div className='col-8'>
 
+        <table className="table table-bordered table-dark my-4">
+
+            <tbody>
+            <tr >
+                            <td>MEDICINE NAME</td>
+                            <td>TIMMING</td>
+                            <td>NO. OF DAYS</td>
+                        </tr>
+                {
+                    arrobj.map((i, j) => {
+                        return <tr key={j}>
+                            <td>{i.medname}</td>
+                            <td>{i.timming}</td>
+                            <td>{i.nodays}</td>
+                        </tr>
+                    })
+                }
+
+            </tbody>
+        </table>
+    </div>
+</div>
 
 <div className='container-fluid'>
       <div className="row justify-content-center">
@@ -127,7 +173,7 @@ const DoctPatientDetails = (props) => {
     
    
   <div class="form-group text-white my-4">
-    <label htmlFor="exampleFormControlTextarea1">Update {obj.nam}'s' Observation</label>
+    <label htmlFor="exampleFormControlTextarea1" className='my-2'>Update {obj.nam}'s' Observation</label>
     <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" onChange={(event)=>{ setobs(event.target.value)  }}></textarea>
   </div>
   <div class="form-group text-white my-4">
@@ -154,7 +200,64 @@ const DoctPatientDetails = (props) => {
           </div>
 
 
+          <div>
 
+<div className="container-fluid">
+    <div className="row justify-content-center my-5 bg-danger">
+        <div className='col-12'>
+            <form onSubmit={addmed}>
+                <div className="row justify-content-center my-5">
+
+                    <div className='col-3'>
+                        <div className="my-3">
+                            <input type="text" className="form-control" id="exampleInputname" aria-describedby="emailHelp" placeholder={nam} onChange={(event) => { setnam(event.target.value) }}></input>
+                        </div>
+                    </div>
+
+                    <div className='col-3'>
+                        <select className="form-select my-3" aria-label="Default select example" placeholder={timming} onChange={(event) => { settimming(event.target.value) }}>
+                            <option value="SELECTED">SELECT TIMMING</option>
+                            <option value="DAY">DAY</option>
+                            <option value="NIGHT">NIGHT</option>
+                            <option value="DAY/NIGHT">DAY/NIGHT</option>
+                            <option value="DAY/NIGHT/AFTERNOON">DAY/NIGHT/AFTERNOON</option>
+
+                        </select>
+                    </div>
+
+                    <div className='col-2'>
+                        <div className="my-3">
+                            <input type="number" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder={qty} onChange={(event) => { setqty(event.target.value) }}></input>
+                        </div>
+                    </div>
+
+
+
+                    <div className='col-1'>
+
+                        <button type="submit" className="btn btn-primary my-3">         <svg type='submit' xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" className="bi bi-plus  plus" viewBox="0 0 16 16">
+                            <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z" />
+                        </svg></button>
+
+                    </div>
+
+
+
+                </div>
+
+            </form>
+        </div>
+
+
+
+    </div>
+</div>
+
+
+
+
+
+</div>
 
 
 

@@ -18,7 +18,7 @@ const Doctor = () => {
 <div>
       <div className='container-fluid'>
       <div className="row justify-content-center">
-        <div className="col-4 heig text-center bg-danger "  >
+        <div className="col-4 heige text-center bg-danger "  >
         
          <div className="mt-5 row justify-content-center">
          <div className="col-8 my-4">
