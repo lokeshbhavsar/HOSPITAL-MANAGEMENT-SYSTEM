@@ -4,7 +4,7 @@
       "id": "1",
       "nam": "mayur",
       "admit": {
-        "releasedate": "05/07/2022"
+        "releasedate": "07/05/2022"
       },
       "doctorname": "lokesh",
       "observation": "new pbs 7879 98798",
@@ -15,21 +15,36 @@
           "medname": "mayur",
           "timming": "NIGHT",
           "nodays": "1",
-          "price": ""
+          "price": "1"
         },
         {
           "medname": "lokesh",
           "timming": "DAY/NIGHT",
           "nodays": "6",
-          "price": ""
+          "price": "32"
         },
         {
           "medname": "lokesht2",
           "timming": "DAY/NIGHT",
           "nodays": "2",
-          "price": ""
+          "price": "3"
         }
       ]
+    },
+    {
+      "id": "2",
+      "nam": "yash",
+      "admit": {
+        "isadmit": "NO",
+        "releasedate": "NOT NEEDED",
+        "room": "NOT ASSIGNED",
+        "nursename": "NOT ASSIGNED"
+      },
+      "doctorname": "NOT ASSIGNED",
+      "observation": "NOT ASSIGNED",
+      "bill": 0,
+      "visitdate": "7/3/2022",
+      "medicine": []
     }
   ],
   "DOCTOR": [

@@ -10,7 +10,7 @@ const Nurse = () => {
         
         setusername(nav.query.name)
         setaadhar(nav.query.aadhar)
-        console.log(username,aadhar);
+        
     })
   return (
     <div>
@@ -26,7 +26,7 @@ const Nurse = () => {
           </div>
           
           <div className="col-8 my-4">
-          <button type="button" class="btn btn-light" onClick={()=>{nav.push("/")}}>LOGOUT</button>
+          <button type="button" className="btn btn-light" onClick={()=>{nav.push("/")}}>LOGOUT</button>
      
           </div>
 

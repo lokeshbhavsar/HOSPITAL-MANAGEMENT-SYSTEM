@@ -93,7 +93,7 @@ const DoctPatientDetails = (props) => {
     var month = splitDate[1];
     var day = splitDate[2];
 
-    return day + '/' + month + '/' + year;
+    return month + '/' + day + '/' + year;
   }
 
 

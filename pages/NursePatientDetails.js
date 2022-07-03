@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-
+import NursePatientMedicine from "./NursePatientMedicine"
 const NursePatientDetails = () => {
     const [aadhar, setaadhar] =useState(0)
     const [ aadharstatus,setstatus]    =useState(0)
@@ -37,7 +37,7 @@ const NursePatientDetails = () => {
     </div>
     }
     if(aadharstatus==1){
-    return <DoctPatientDetails  aadhar={nv}></DoctPatientDetails>
+    return <NursePatientMedicine  aadhar={nv}></NursePatientMedicine>
        
     }
 }

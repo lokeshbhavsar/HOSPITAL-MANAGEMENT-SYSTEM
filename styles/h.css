@@ -31,3 +31,8 @@ h3{
     color: black;
     
 }
+.buttonwidth{
+    width: 100px;
+    border-radius: 5px;
+    color: white;
+}
